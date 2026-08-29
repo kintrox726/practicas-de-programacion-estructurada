@@ -22,6 +22,7 @@ rl.question("Ingrese el nombre del producto: ", (producto)=>{
             console.log(`TOTAL: $${total.toFixed(2)}`)
             rl.close();
 
+            
         });
     });
 });

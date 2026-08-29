@@ -10,6 +10,7 @@ const rl = readline.createInterface({
 });
 
 rl.question("Ingrese su nombre completo: ", (nombre) => {
+    
     console.log(`Su nombre en mayuscula es: ${nombre.toUpperCase()}`);
     console.log(`Su nombre en mayuscula es: ${nombre.toUpperCase().slice(0,4)}`);
     console.log(`Su nombre en mayuscula es: ${nombre.toLowerCase().slice(0,4)}`); 

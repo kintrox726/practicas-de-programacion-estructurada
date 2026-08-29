@@ -11,4 +11,5 @@ let hr = fecha.getHours();
 let min = fecha.getMinutes();
 let segun = fecha.getSeconds();
 
+
 console.log(`Hoy es: ${dia}/${mes}/${anio} y son las ${hr}:${min}:${segun}`);

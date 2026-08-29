@@ -18,5 +18,4 @@ rl.question("Ingrese su fecha de nacimiento: ",(fechaNac)=>{
 
     console.log(`edad aproximada es: ${edad} años`);
     rl.close();
-
 });
