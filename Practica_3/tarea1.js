@@ -1,6 +1,6 @@
 // Tarea 1: Validar número positivo, negativo o cero
 // Se solicita un número al usuario y se verifica si es positivo, negativo o cero.
-// Dependiendo del valor, se imprime el resultado correspondiente.
+// Dependiendo del valor, se imprime el resultado correspondiente
 
 import readline from "node:readline";
 

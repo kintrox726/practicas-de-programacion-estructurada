@@ -10,7 +10,7 @@ const rl = readline.createInterface({
     output: process.stdout,
 });
 
-// Se solicitan los datos del empleado.
+// Se solicitan los datos del empleado
 rl.question("ingrese su nombre su nombre: ", (nomber) => {
     rl.question("Ingrese su edad: ", (edad) => {
         rl.question("Ingres sus anios de experiencia: ", (experiencia) => {

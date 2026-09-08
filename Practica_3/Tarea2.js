@@ -4,7 +4,7 @@
 
 import readline from "node:readline";
 
-// Se crea la interfaz para leer datos del usuario.
+// Se crea la interfaz para leer datos del usuario
 const rl = readline.createInterface({
     input: process.stdin,
     output: process.stdout,

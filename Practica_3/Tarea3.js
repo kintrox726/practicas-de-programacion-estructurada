@@ -6,7 +6,7 @@
 
 import readline from "node:readline";
 
-// Se crea la interfaz para leer la entrada del usuario.
+// Se crea la interfaz para leer la entrada del usuario
 const rl = readline.createInterface({
     input: process.stdin,
     output: process.stdout,
