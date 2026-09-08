@@ -1,21 +1,27 @@
-//Tarea 3: Calcular edad y años de experiencia
-//Solicite al usuario su año de nacimiento. Obtenga el año actual, calcule su edad y muestre: 
-//"Tu edad aproximada es: X años."
+// Tarea 3: Calcular edad y años de experiencia
+// Se solicita el año de nacimiento del usuario y se compara con el año actual.
+// Con base en esa diferencia, se muestra su edad aproximada.
 
-import readline from  "node:readline";
+import readline from "node:readline";
 
+// Se crea la interfaz para leer la entrada del usuario.
 const rl = readline.createInterface({
     input: process.stdin,
-    output: process.stdout    
+    output: process.stdout
 });
 
-let fecha = new Date;
+// Se obtiene la fecha actual del sistema.
+let fecha = new Date();
 
-rl.question("Ingrese su fecha de nacimiento: ",(fechaNac)=>{
-
+// Se pide el año de nacimiento y se calcula la edad.
+rl.question("Ingrese su fecha de nacimiento: ", (fechaNac) => {
+    // Se convierte el valor ingresado a número entero.
     fechaNac = parseInt(fechaNac);
+
+    // Se calcula la edad con la diferencia entre el año actual y el año de nacimiento.
     let edad = fecha.getFullYear() - fechaNac;
 
+    // Se muestra la edad aproximada.
     console.log(`edad aproximada es: ${edad} años`);
     rl.close();
 });
