@@ -1,55 +1,57 @@
 // ============================================
-// EJERCICIO 3: Funciones para arreglos
+// TAREA 3: Inventario de productos
 // ============================================
 // ENUNCIADO:
-// Cree tres funciones: una que reciba un arreglo y devuelva la suma
-// de sus elementos; otra que devuelva el promedio; y otra que devuelva
-// el número mayor. Cree un arreglo con al menos 6 números y muestre
-// los tres resultados.
+// Cree un arreglo de objetos que represente un inventario con al menos
+// 4 productos. Cada producto debe tener: nombre, precio y cantidad.
+// Usando FOR...OF, recorra el arreglo y muestre cada producto con su
+// valor total (precio × cantidad). Además, usando FOR...IN, recorra
+// un objeto que represente el resumen del inventario (total de productos,
+// valor total del inventario) y muestre sus propiedades.
 // ============================================
 
-// Función que suma todos los elementos de un arreglo
-function sumarElementos(arreglo) {
-    let suma = 0; // Acumulador inicial en 0
-    for (let i = 0; i < arreglo.length; i++) {
-        suma += arreglo[i]; // Vamos sumando cada elemento
-    }
-    return suma;
+// Creamos un arreglo con 4 productos
+// Cada producto es un objeto con nombre, precio y cantidad
+const inventario = [
+    { nombre: "Laptop",  precio: 800, cantidad: 3 },
+    { nombre: "Mouse",   precio: 25,  cantidad: 10 },
+    { nombre: "Teclado", precio: 45,  cantidad: 7 },
+    { nombre: "Monitor", precio: 200, cantidad: 5 }
+];
+
+// Variables para guardar el resumen
+let totalProductos = 0;
+let valorTotal = 0;
+
+console.log("=== INVENTARIO DE PRODUCTOS ===\n");
+
+// FOR...OF: recorre los VALORES del arreglo (cada producto)
+for (const producto of inventario) {
+
+    // Calculamos el valor total de este producto
+    let valorProducto = producto.precio * producto.cantidad;
+
+    // Mostramos la información
+    console.log("Producto: " + producto.nombre);
+    console.log("  Precio: $" + producto.precio);
+    console.log("  Cantidad: " + producto.cantidad);
+    console.log("  Valor total: $" + valorProducto);
+    console.log(""); // Línea vacía para separar
+
+    // Vamos acumulando para el resumen
+    totalProductos = totalProductos + producto.cantidad;
+    valorTotal = valorTotal + valorProducto;
 }
 
-// Función que calcula el promedio del arreglo
-function calcularPromedio(arreglo) {
-    // Reutilizamos la función sumarElementos
-    const suma = sumarElementos(arreglo);
-    // El promedio es la suma dividida entre la cantidad de elementos
-    const promedio = suma / arreglo.length;
-    return promedio;
+// Creamos un objeto con el resumen del inventario
+const resumen = {
+    totalProductos: totalProductos,
+    valorTotalInventario: valorTotal
+};
+
+console.log("=== RESUMEN DEL INVENTARIO ===");
+
+// FOR...IN: recorre las PROPIEDADES (nombres) del objeto
+for (const propiedad in resumen) {
+    console.log(propiedad + ": " + resumen[propiedad]);
 }
-
-// Función que devuelve el número mayor del arreglo
-function encontrarMayor(arreglo) {
-    // Suponemos que el primero es el mayor inicialmente
-    let mayor = arreglo[0];
-    // Recorremos el arreglo comparando
-    for (let i = 0; i < arreglo.length; i++) {
-        if (arreglo[i] > mayor) {
-            mayor = arreglo[i]; // Actualizamos si encontramos uno mayor
-        }
-    }
-    return mayor;
-}
-
-// ----- Programa principal -----
-// Creamos un arreglo con 6 números
-const numeros = [15, 8, 23, 4, 42, 10];
-
-// Llamamos a las tres funciones
-const sumaTotal = sumarElementos(numeros);
-const promedio = calcularPromedio(numeros);
-const numeroMayor = encontrarMayor(numeros);
-
-// Mostramos los resultados
-console.log(`Arreglo: [${numeros}]`);
-console.log(`La suma de los elementos es: ${sumaTotal}`);
-console.log(`El promedio es: ${promedio.toFixed(2)}`); // toFixed(2) = 2 decimales
-console.log(`El número mayor es: ${numeroMayor}`);
